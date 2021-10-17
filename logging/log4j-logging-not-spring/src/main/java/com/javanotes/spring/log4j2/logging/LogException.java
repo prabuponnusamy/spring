@@ -5,7 +5,6 @@ import org.apache.logging.log4j.Logger;
 
 public class LogException
 {
-
     private static final Logger logger = LogManager.getLogger();
 
     public static void main(final String[] args)
