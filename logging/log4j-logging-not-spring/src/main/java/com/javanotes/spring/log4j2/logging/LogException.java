@@ -10,7 +10,7 @@ public class LogException
 
     public static void main(final String[] args)
     {
-        final String name = "Apple";
+        final String name = "Prabu";
         logger.info("Name is {}", name);
         try {
             name.substring(6);
