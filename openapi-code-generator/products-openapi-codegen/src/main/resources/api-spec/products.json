@@ -1,0 +1,68 @@
+{
+	"openapi": "3.0.1",
+	"info": {
+		"title": "Products service",
+		"description": "",
+		"license": {
+			"name": "Apache 2.0",
+			"url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+		},
+		"version": "1.0.0"
+	},
+	"tags": [
+		{
+			"name": "products",
+			"description": "Everything about products"
+		}
+	],
+	"paths": {
+		"/products": {
+			"get": {
+				"tags": [
+					"product"
+				],
+				"summary": "Get all the products",
+				"operationId": "listProducts",
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ProductsDetail"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"ProductsDetail": {
+				"type": "object",
+				"properties": {
+					"products": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Product"
+						}
+					}
+				}
+			},
+			"Product": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"name": {
+						"type": "string"
+					}
+				}
+			}
+		}
+	}
+}
